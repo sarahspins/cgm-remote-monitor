@@ -82,6 +82,7 @@
 		var red = 'rgba(213,9,21,1)';		// These are the particular shades of 
 		var yellow = 'rgba(233,205,53,1)';	// red, yellow, and green. Tweak if you like.
 		var green = 'rgba(134,207,70,1)';
+		var blue = 'rgba(102,204,204,1)';	    
 		var direction = rec.direction;
 		$('#arrow').attr('src', 'images/'+direction+'.png');
 		switch (direction) {
@@ -109,7 +110,7 @@
 		}
 		$('.bgnow').text(rec.sgv);
 		if (bgNum < LowThresh) {
-			$('body').css('background-color', red);
+			$('body').css('background-color', blue);
 		}
 		if ((LowThresh <= bgNum) && (bgNum < MedThresh)) {
 			$('body').css('background-color', green);
