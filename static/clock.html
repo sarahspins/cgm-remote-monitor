@@ -102,6 +102,9 @@
 		if (bgNum >= HighThresh) {
 			$('body').css('background-color', red);
 		}
+	    	if (bgNum == 100) {
+		$('.bgnow').text(1☺☺);
+		}
 		var threshold = 1000 * 60 * 13;
 		$('.bgnow').toggleClass('stale', (now - last > threshold));
 		}
