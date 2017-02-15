@@ -42,6 +42,10 @@
     .stale {
     	text-decoration: line-through;
     }
+    .arrow {
+    	font-size: 44vmin;
+    	width: 100%;
+    }	  
     img#arrow {
     	height: 35vmin;
     	width: 50vmin;
@@ -88,7 +92,32 @@
 		var green = 'rgba(134,207,70,1)';
 		var blue = 'rgba(102,204,204,1)';	    
 		var direction = rec.direction;
-		$('#arrow').attr('src', 'images/'+direction+'.svg');
+//		$('#arrow').attr('src', 'images/'+direction+'.svg');
+
+		switch (direction) {				// Arrow images are different widths.
+			case "DoubleUp":
+				$('.arrow').text(↑↑);
+				break;
+			case "DoubleDown":
+				$('.arrow').text(↓↓);
+				break;
+			case "SingleUp":
+				$('.arrow').text(↑);
+				break;				
+			case "SingleDown":
+				$('.arrow').text(↓);
+				break;
+			case "FortyFiveUp":
+				$('.arrow').text(↗);
+				break;				
+			case "FortyFiveDown":
+				$('.arrow').text(↘);
+				break;
+			case "Flat":
+				$('.arrow').text(→);
+				break;
+		}
+	    
 		$('.bgnow').text(rec.sgv);
 		if (bgNum < LowThresh) {
 			$('body').css('background-color', blue);
