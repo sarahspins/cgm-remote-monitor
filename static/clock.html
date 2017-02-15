@@ -43,8 +43,8 @@
     	text-decoration: line-through;
     }
     img#arrow {
-    	height: 25vmin;
-    	width: 35vmin;
+    	height: 35vmin;
+    	width: 50vmin;
 	  }
   </style>
 </head>
@@ -89,29 +89,6 @@
 		var blue = 'rgba(102,204,204,1)';	    
 		var direction = rec.direction;
 		$('#arrow').attr('src', 'images/'+direction+'.png');
-//		switch (direction) {
-//		case "DoubleUp":
-//			$('#arrow').attr('width', '153');
-//			break;
-//		case "SingleUp":
-//			$('#arrow').attr('width', '77');
-//			break;
-//		case "FortyFiveUp":
-//			$('#arrow').attr('width', '85');
-//			break;
-//		case "Flat":
-//			$('#arrow').attr('width', '107');
-//			break;
-//		case "FortyFiveDown":
-//			$('#arrow').attr('width', '85');
-//			break;
-//		case "SingleDown":
-//			$('#arrow').attr('width', '77');
-//			break;
-//		case "DoubleDown":
-//			$('#arrow').attr('width', '153');
-//			break;
-//		}
 		$('.bgnow').text(rec.sgv);
 		if (bgNum < LowThresh) {
 			$('body').css('background-color', blue);
