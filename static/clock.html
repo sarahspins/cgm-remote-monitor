@@ -115,11 +115,12 @@
 				$('.arrow').text("↘");
 				break;
 			case "Flat":
-				$('.arrow').text("→");
+				$('.arrow').text("→");			
 				break;
 		}
 	    
 		$('.bgnow').text(rec.sgv);
+	    	$('title').text(rec.sgv);
 		if (bgNum < LowThresh) {
 			$('body').css('background-color', blue);
 		}
