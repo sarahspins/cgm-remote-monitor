@@ -59,7 +59,6 @@
   <div class="main">
   	<div class="inner">
 		<div class="bgnow"></div>
-//		<div class="arrow"></div>
 	</div>
   </div>
   
@@ -118,10 +117,10 @@
 				arrow = "→";			
 				break;
 		}
-	    
-		$('.bgnow').text(rec.sgv + " " + arrow);
-//	    	$('.arrow').text(arrow);
-	        var title = rec.sgv + " " + arrow;
+
+	    	var title = rec.sgv + " " + arrow;
+
+		$('.bgnow').text(title);
 	    	$('title').text(title);
 		if (bgNum < LowThresh) {
 			$('body').css('background-color', blue);
