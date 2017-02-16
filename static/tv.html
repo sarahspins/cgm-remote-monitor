@@ -75,8 +75,8 @@
     }
     function render (xhr) {
 		console.log('xhr', xhr);
-		var rec = xhr[1];
-		var last = new Date(rec.date);
+		var = xhr[0];
+		var last = new Date(rec.bgs.datetime);
 		var now = new Date( );
 		var LowThresh = parseFloat("70");	// Set low/med/high thresholds here.
 		var MedThresh = parseFloat("140");	// Below Low will be red; between Low & Med
@@ -86,14 +86,14 @@
 											// Would love to just pull these from the main
 											// NS settings, but not sure how to call.
 		if (window.serverSettings.settings.units == 'mmol') {
-		rec.sgv = Nightscout.units.mgdlToMMOL(rec.sgv);
+		rec.bgs.sgv = Nightscout.units.mgdlToMMOL(rec.bgs.sgv);
 		}
-		var bgNum = parseFloat(rec.sgv);
+		var bgNum = parseFloat(rec.bgs.sgv);
 		var red = 'rgba(213,9,21,1)';		// These are the particular shades of 
 		var yellow = 'rgba(233,205,53,1)';	// red, yellow, and green. Tweak if you like.
 		var green = 'rgba(134,207,70,1)';
 		var blue = 'rgba(102,204,204,1)';	    
-		var direction = rec.direction;
+		var direction = rec.bgs.direction;
 //		$('#arrow').attr('src', 'images/'+direction+'.svg');
 		switch (direction) {				// Arrow images are different widths.
 			case "DoubleUp":
@@ -119,7 +119,7 @@
 				break;
 		}
 	    
-		$('.bgnow').text(rec.sgv);
+		$('.bgnow').text(rec.bgs.sgv);
 		if (bgNum < LowThresh) {
 			$('body').css('background-color', blue);
 		}
