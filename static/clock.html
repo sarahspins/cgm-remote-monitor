@@ -59,7 +59,7 @@
   <div class="main">
   	<div class="inner">
 		<div class="bgnow"></div>
-		<div class="arrow"></div>
+//		<div class="arrow"></div>
 	</div>
   </div>
   
@@ -119,8 +119,8 @@
 				break;
 		}
 	    
-		$('.bgnow').text(rec.sgv);
-	    	$('.arrow').text(arrow);
+		$('.bgnow').text(rec.sgv + " " + arrow);
+//	    	$('.arrow').text(arrow);
 	        var title = rec.sgv + " " + arrow;
 	    	$('title').text(title);
 		if (bgNum < LowThresh) {
