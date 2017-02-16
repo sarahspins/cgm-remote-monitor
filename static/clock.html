@@ -70,8 +70,7 @@
   <script type="text/javascript">
     function query ( ) {
       console.log('query');
-//      $.ajax('/api/v1/entries/current.json', { success: render });
-      $.ajax('/pebble', { success: render });
+      $.ajax('/api/v1/entries/current.json', { success: render });
     }
     function render (xhr) {
 		console.log('xhr', xhr);
