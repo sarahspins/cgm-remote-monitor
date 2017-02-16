@@ -75,7 +75,7 @@
     }
     function render (xhr) {
 		console.log('xhr', xhr);
-		var rec = xhr[0];
+		var rec = xhr[1];
 		var last = new Date(rec.date);
 		var now = new Date( );
 		var LowThresh = parseFloat("70");	// Set low/med/high thresholds here.
