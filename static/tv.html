@@ -1,0 +1,52 @@
+		padding: 0;
+		overflow: hidden;
+		text-align: center;
+		font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+		font-weight: 700;
+		color: white;
+    }
+    .main {
+    	display: inline-flex; height: 100vmax;	// My CSS is super rusty; this is the best
+    }											// I could manage. Needs work to support
+    .inner {									// landscape better, at the very least.
+    	margin: 30vmin auto;
+    }
+    .bgnow {
+    	font-size: 44vmin;
+    	width: 100%;
+    }
+    .stale {
+    	text-decoration: line-through;
+    }
+    .arrow {
+    	font-size: 44vmin;
+    	width: 100%;
+	margin-top: -15vmin;
+    }	  
+    img#arrow {
+    	height: 35vmin;
+    	width: 50vmin;
+	  }
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+  	<div class="inner">
+		<div class="bgnow"></div>
+		<div class="arrow"></div>
+	</div>
+  </div>
+  
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/api/v1/status.js"></script>
+  <script src="/public/js/bundle.js"></script>
+  
+  <script type="text/javascript">
+    function query ( ) {
+      console.log('query');
+      $.ajax('/api/v1/entries/current.json', { success: render });
+    }
+    function render (xhr) {
+		console.log('xhr', xhr);
