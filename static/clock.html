@@ -93,34 +93,37 @@
 		var green = 'rgba(134,207,70,1)';
 		var blue = 'rgba(102,204,204,1)';	    
 		var direction = rec.direction;
+	   	var arrow = ""; //arrows
 //		$('#arrow').attr('src', 'images/'+direction+'.svg');
 
 		switch (direction) {				// Arrow images are different widths.
 			case "DoubleUp":
-				$('.arrow').text("↑↑");
+				arrow = "↑↑";
 				break;
 			case "DoubleDown":
-				$('.arrow').text("↓↓");
+				arrow = "↓↓";
 				break;
 			case "SingleUp":
-				$('.arrow').text("↑");
+				arrow = "↑";
 				break;				
 			case "SingleDown":
-				$('.arrow').text("↓");
+				arrow = "↓";
 				break;
 			case "FortyFiveUp":
-				$('.arrow').text("↗");
+				arrow = "↗";
 				break;				
 			case "FortyFiveDown":
-				$('.arrow').text("↘");
+				arrow = "↘";
 				break;
 			case "Flat":
-				$('.arrow').text("→");			
+				arrow = "→";			
 				break;
 		}
 	    
 		$('.bgnow').text(rec.sgv);
-	    	$('title').text(rec.sgv);
+	    	$('.arrow').text(arrow);
+	        var title = rec.sgv + " " + arrow;
+	    	$('title').text(title);
 		if (bgNum < LowThresh) {
 			$('body').css('background-color', blue);
 		}
