@@ -88,6 +88,7 @@
 	        var old = xhr[1];
 		var last = new Date(rec.date);
 		var now = new Date( );
+	    	var UrgLowThresh = parseFloat("55");
 		var LowThresh = parseFloat("70");	// Set low/med/high thresholds here.
 		var MedThresh = parseFloat("140");	// Below Low will be red; between Low & Med
 		var HighThresh = parseFloat("180");	// is green; between Med & High is yellow;
@@ -107,7 +108,8 @@
 		var red = 'rgba(213,9,21,1)';		// These are the particular shades of 
 		var yellow = 'rgba(233,205,53,1)';	// red, yellow, and green. Tweak if you like.
 		var green = 'rgba(134,207,70,1)';
-		var blue = 'rgba(102,204,204,1)';	    
+		var blue = 'rgba(102,204,204,1)';
+	    	var purple = 'rgba(177,129,229,1)'; 
 		var direction = rec.direction;
 	   	var arrow = ""; //arrows
 //		$('#arrow').attr('src', 'images/'+direction+'.svg');
@@ -140,7 +142,10 @@
 		$('.bgnow').text(title);
 	    	$('title').text(title);
 		$('.delta').text(delta);	    
-		if (bgNum < LowThresh) {
+		if (bgNum <= UrgLowThresh) {
+			$('body').css('background-color', purple);
+		}
+		if ((UrgLowThresh < bgNum) && (bgNum < LowThresh)) {
 			$('body').css('background-color', blue);
 		}
 		if ((LowThresh <= bgNum) && (bgNum < MedThresh)) {
