@@ -85,11 +85,12 @@
   <script type="text/javascript">
     function query ( ) {
       console.log('query');
-      $.ajax('/api/v1/entries/current.json', { success: render });
+      $.ajax('/api/v1/entries/sgv.json?count=2', { success: render });
     }
     function render (xhr) {
 		console.log('xhr', xhr);
 		var rec = xhr[0];
+	        var old = xhr[1];
 		var last = new Date(rec.date);
 		var now = new Date( );
 		var LowThresh = parseFloat("70");	// Set low/med/high thresholds here.
@@ -103,6 +104,11 @@
 		rec.sgv = Nightscout.units.mgdlToMMOL(rec.sgv);
 		}
 		var bgNum = parseFloat(rec.sgv);
+	        var bgOld = parseFloat(old.sgv);
+	    	var delta = bgNum - bgOld;
+	    	if (delta >= 0) {
+			delta = "+" + delta;
+		}
 		var red = 'rgba(213,9,21,1)';		// These are the particular shades of 
 		var yellow = 'rgba(233,205,53,1)';	// red, yellow, and green. Tweak if you like.
 		var green = 'rgba(134,207,70,1)';
@@ -138,6 +144,7 @@
 
 		$('.bgnow').text(title);
 	    	$('title').text(title);
+		$('.delta').text(delta);	    
 		if (bgNum < LowThresh) {
 			$('body').css('background-color', blue);
 		}
