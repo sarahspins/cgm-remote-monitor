@@ -205,7 +205,7 @@ window.onload=show2
 	    
 	    	if (now - last > threshold) {
 			delta = now - last;
-			$('.delta').text(delta + " minutes old");	
+			$('.delta').text(delta.getMinutes() + " minutes old");	
 		}
 		}
     function init ( ) {
