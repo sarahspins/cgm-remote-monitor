@@ -175,6 +175,9 @@ window.onload=show2
 			case "Flat":
 				arrow = "→";			
 				break;
+			default:
+				arrow = "-";			
+				break;
 		}
 
 	    	var title = rec.sgv + " " + arrow;
@@ -199,6 +202,11 @@ window.onload=show2
 		}
 		var threshold = 1000 * 60 * 13;
 		$('.bgnow').toggleClass('stale', (now - last > threshold));
+	    
+	    	if (now - last > threshold) {
+			delta = now - last;
+			$('.delta').text(delta + " minutes old);	
+		}
 		}
     function init ( ) {
       console.log('init');
